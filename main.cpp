@@ -2,6 +2,7 @@
 #include "std_lib_facilities.h"
 #include "ghelp.h"
 #include "git_commands.h"
+#include "gsynth_generic_selections.h"
 
 int main()
 {
@@ -15,114 +16,44 @@ int main()
         std::cin >> choice;
         std::cout << "\n";
 
-        if (choice == "help")
-            ghelp();
+        if (choice == "amending")
+            git_cmd_amending();
+
+        else if (choice == "branching")
+            git_cmd_branching();
+
+        else if (choice == "configuring")
+            git_cmd_configuring();
+
+        else if (choice == "log")
+            git_cmd_log();
+
+        else if (choice == "manual")
+            git_cmd_manual();
+
+        else if (choice == "remote_branches")
+            git_cmd_remote_branches();
+
+        else if (choice == "remote_repos")
+            git_cmd_remote_repos();
+
+        else if (choice == "tracking")
+            git_cmd_tracking();
+
+        else if (choice == "remote_tags")
+            git_cmd_remote_tags();
+
+        else if (choice == "tagging")
+            git_cmd_tagging();
+
+        else if (choice == "untracking")
+            git_cmd_untracking();
+
+        else if (choice == "help" || choice == "back")
+            main_generic_selection(choice);
 
         else if (choice == "quit")
             break;
-
-        else if (choice == "back")
-            std::cout << "You are already on main menu ('quit' to exit program)" << "\n\n";
-
-
-        else if (choice == "manual")
-            git_cmd_list("manual");
-
-        else if (choice == "configuring")
-        {
-            git_cmd_list("configuring");
-        }
-
-        else if (choice == "tracking")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "remote_repos")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "branching")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "remote_branches")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "log")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "tagging")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "remote_tags")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "amending")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
-
-        else if (choice == "untracking")
-        {
-            std::cout << "COMMAND: " << "\n";
-            std::cout << "USE: " << "\n";
-            std::cout << "OPTIONS: " << "\n\n";
-        }
 
         else
             std::cout << "\n\n" << "/!\\ WRONG INPUT /!\\ Please check spelling" << "\n\n\n\n";

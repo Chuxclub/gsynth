@@ -9,7 +9,7 @@
 void ghelp()
 {
     std::cout << "'back' => Go to previous selection" << "\n";
-    std::cout << "'quit' => Exit program" << "\n\n";
+    std::cout << "'quit' => Exit program (has to be used in main menu)" << "\n\n";
 
     std::cout << "'manual' => Learn how to summon and use git manual" << "\n";
     std::cout << "'configuring' => Learn how to summon and use " << "\n";
