@@ -18,17 +18,19 @@ void git_cmd_amending()
         std::cout << "~~~~~~~~~~~~~~~ AMENDING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: git commit --amend" << "\n";
-        std::cout << "USE: Combines staged changes with the previous commit instead of creating an entirely new commit. \n";
-        std::cout << "     Can also be used to simply edit the previous commit message without changing its snapshot. \n";
-        std::cout << "     Warning! Amending does not just alter the most recent commit, it replaces it entirely, meaning\n";
-        std::cout << "     the amended commit will be a new entity with its own ref." << "\n\n";
+        std::cout << "USE:     Combines staged changes with the previous commit instead of creating an entirely new commit. \n";
+        std::cout << "         Can also be used to simply edit the previous commit message without changing its snapshot. \n";
+        std::cout << "         Warning! Amending does not just alter the most recent commit, it replaces it entirely, meaning\n";
+        std::cout << "         the amended commit will be a new entity with its own ref." << "\n\n";
 
         std::cout << "COMMAND: git reset HEAD <file>" << "\n";
-        std::cout << "USE: Unstages <file>" << "\n\n";
+        std::cout << "USE:     Unstages <file>" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: git checkout --<file>" << "\n";
-        std::cout << "USE: Discards the changes of the defined file in the working directory." << "\n";
-        std::cout << "     Warning! Any changes you made to that file are gone" << "\n\n";
+        std::cout << "USE:     Discards the changes of the defined file in the working directory." << "\n";
+        std::cout << "WARNING: Any changes you made to that file are gone" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -37,13 +39,7 @@ void git_cmd_amending()
         std::cin >> cmd_options;
 
         if(cmd_options == "git_commit_--amend")
-            git_amending_descriptions("git_commit_--amend");
-
-        else if(cmd_options == "git_reset_HEAD_<file>")
-            git_amending_descriptions("git_reset_HEAD_<file>");
-
-        else if (cmd_options == "git_checkout_--<file>")
-            git_amending_descriptions("git_checkout_--<file>");
+            git_amending_descriptions();
 
         else if(cmd_options == "back")
             break;
@@ -71,8 +67,24 @@ void git_cmd_branching()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ BRANCHING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "COMMAND: git branch" << "\n";
+        std::cout << "USE:     Depending on the option it lets you creates new branches, delete branches or list branches" << "\n\n";
+
+        std::cout << "COMMAND: git checkout <branch>" << "\n";
+        std::cout << "USE:     Switches to existing <branch> branch’s head" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git checkout -b <branch>" << "\n";
+        std::cout << "USE:     Creates a new branch named <branch> and automatically switches to it" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git merge <branch>" << "\n";
+        std::cout << "USE:     Merges targeted <branch> to current branch (two methods: fast-forward or three-way)" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git mergetool" << "\n";
+        std::cout << "USE:     Fires up graphical tool for merge-conflicts resolutions" << "\n\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -80,14 +92,10 @@ void git_cmd_branching()
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_branch")
+            git_branching_descriptions();
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
-
-        if(cmd_options == "back")
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")
@@ -144,7 +152,7 @@ void git_cmd_configuring()
 }
 
 
-/* -------------------------- GIT LOG COMMANDS -------------------------- */
+/* -------------------------- GIT LOG COMMANDS -------------------------- NOT DONE*/
 void git_cmd_log()
 {
     while(true)
@@ -195,34 +203,26 @@ void git_cmd_manual()
         std::cout << "~~~~~~~~~~~~~~~ MANUAL COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: git help <command>" << "\n";
-        std::cout << "USE: Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: man git-<command>" << "\n";
-        std::cout << "USE: Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: git <command> -h" << "\n";
-        std::cout << "USE: gives more concise help. Example: git add -h" << "\n\n";
+        std::cout << "USE:     gives more concise help. Example: git add -h" << "\n\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
-        string cmd_options;
-        std::cin >> cmd_options;
+        string proceed;
 
-        if(cmd_options == "git_help_<command>")
-            git_manual_descriptions("git_help_<command>");
+        std::cout << "Enter 'p' when you are ready to proceed: ";
+        cin >> proceed;
 
-        else if(cmd_options == "man_git-<command>")
-            git_manual_descriptions("man_git-<command>");
-
-        else if(cmd_options == "git_<command>_-h")
-            git_manual_descriptions("git_<command>_-h");
-
-        else if(cmd_options == "back")
+        if(proceed == "p")
             break;
-
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
 
         else
         {
@@ -236,7 +236,7 @@ void git_cmd_manual()
 }
 
 
-/* -------------------------- GIT REMOTE BRANCHES COMMANDS -------------------------- */
+/* -------------------------- GIT REMOTE BRANCHES COMMANDS -------------------------- NOT DONE*/
 void git_cmd_remote_branches()
 {
     while(true)
@@ -278,7 +278,7 @@ void git_cmd_remote_branches()
 }
 
 
-/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS  -------------------------- */
+/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS  -------------------------- NOT DONE*/
 void git_cmd_remote_repos()
 {
     while(true)
@@ -320,7 +320,7 @@ void git_cmd_remote_repos()
 }
 
 
-/* -------------------------- GIT REMOTE TAGS COMMANDS -------------------------- */
+/* -------------------------- GIT REMOTE TAGS COMMANDS -------------------------- NOT DONE*/
 void git_cmd_remote_tags()
 {
     while(true)
@@ -362,7 +362,7 @@ void git_cmd_remote_tags()
 }
 
 
-/* -------------------------- GIT TAGGING COMMANDS -------------------------- */
+/* -------------------------- GIT TAGGING COMMANDS -------------------------- NOT DONE*/
 void git_cmd_tagging()
 {
     while(true)
@@ -404,7 +404,7 @@ void git_cmd_tagging()
 }
 
 
-/* -------------------------- GIT TRACKING COMMANDS  -------------------------- */
+/* -------------------------- GIT TRACKING COMMANDS  -------------------------- NOT DONE*/
 void git_cmd_tracking()
 {
     while(true)
@@ -461,7 +461,7 @@ void git_cmd_tracking()
 }
 
 
-/* -------------------------- GIT UNTRACKING COMMANDS  -------------------------- */
+/* -------------------------- GIT UNTRACKING COMMANDS  -------------------------- NOT DONE*/
 void git_cmd_untracking()
 {
     while(true)

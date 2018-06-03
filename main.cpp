@@ -8,13 +8,14 @@ int main()
 {
     string choice;
 
-    std::cout << "*** gsynth - Git commands synthesises software ***" << "\n\n";
-
     while (true)
     {
+        std::cout << "\n\n" << "=================== *** gsynth - Git commands synthesises software *** ===================" << "\n\n";
+
         std::cout << "Enter a valid command ('help' for available commands): ";
         std::cin >> choice;
-        std::cout << "\n";
+
+        std::cout << "\n\n" << "==========================================================================================" << "\n\n";
 
         if (choice == "amending")
             git_cmd_amending();

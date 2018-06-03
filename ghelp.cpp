@@ -8,6 +8,8 @@
 
 void ghelp()
 {
+    std::cout << "================== *** gsynth help *** ==================" << "\n\n";
+
     std::cout << "'back' => Go to previous selection" << "\n";
     std::cout << "'quit' => Exit program (has to be used in main menu)" << "\n\n";
 
@@ -22,4 +24,24 @@ void ghelp()
     std::cout << "'remote_tags' => Learn how to summon and use " << "\n";
     std::cout << "'amending' => Learn how to summon and use " << "\n";
     std::cout << "'untracking' => Learn how to summon and use " << "\n\n";
+
+    std::cout << "=========================================================" << "\n\n";
+
+    string proceed;
+    while(true)
+    {
+        std::cout << "Enter 'p' when you are ready to proceed: ";
+        cin >> proceed;
+
+        if(proceed == "p")
+            break;
+        else
+        {
+            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+
+            std::cout << "Please check spelling";
+
+            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+        }
+    }
 }
