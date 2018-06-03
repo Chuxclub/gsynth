@@ -5,6 +5,7 @@
 #include "std_lib_facilities.h"
 #include "ghelp.h"
 #include "git_cmd_descriptions.h"
+#include "gsynth_generic_selections.h"
 
 /* -------------------------- GIT AMENDING COMMANDS DESCRIPTIONS  -------------------------- */
 void git_amending_descriptions()
@@ -194,35 +195,106 @@ void git_config_descriptions()
 
 
 /* -------------------------- GIT LOG COMMANDS DESCRIPTIONS  -------------------------- */
-void git_log_descriptions(string a)
+void git_log_descriptions()
 {
-    std::cout << "\n";
+    std::cout << "\n\n" << "~~~~~~~~~~~~~~~ DESCRIPTION: git log syntax ~~~~~~~~~~~~~~~" << "\n\n";
 
-    if (a == "git_commit_--amend")
-    {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
-    }
+    std::cout << "COMMAND SYNTAX: git log (<option 1>) (<option 2>) (<option 3>) (<option ...>)";
 
-    else if (a == "git_reset_HEAD_<file>")
-    {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
-    }
+    std::cout << "\n\n" << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
 
-
-    else if (a == "git_checkout_--<file>")
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
-
-
-    string proceed;
     while(true)
     {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
+        std::cout << "Do you want to have complementary information about log format options or search filters options?" << "\n\n";
+        std::cout << "Type 'format' for log format options or 'filters' for search filters ('help' for available commands): ";
+        string cmd_options;
+        std::cin >> cmd_options;
 
-        if(proceed == "p")
+        if(cmd_options == "format")
+        {
+            std::cout << "\n";
+            std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log <format options> ~~~~~~~~~~~~~~~" << "\n\n";
+
+            std::cout << "OPTION(S):     -<n>" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Limits the number of log entries displayed" << "\n";
+            std::cout << "EXAMPLE:       git log -2" << "\n\n";
+
+            std::cout << "OPTION(S):     --oneline" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Shorthand for --pretty=oneline --abbrev-commit used together" << "\n";
+            std::cout << "EXAMPLE:       git log --oneline" << "\n\n";
+
+            std::cout << "OPTION(S):     -p" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Shows the difference (the patch output) introduced in each commit" << "\n";
+            std::cout << "EXAMPLE:       git log -p" << "\n\n";
+
+            std::cout << "OPTION(S):     --graph" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Displays an ASCII graph of the branch and merge history beside the log output." << "\n";
+            std::cout << "EXAMPLE:       git log --graph" << "\n\n";
+
+            std::cout << "OPTION(S):     --pretty=" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Changes the log output to formats other than the default." << "\n";
+            std::cout << "               + oneline: prints each commit on a single line." << "\n";
+            std::cout << "               + short, full, and fuller: the output in roughly the same format but with less or more information." << "\n";
+            std::cout << "               + format: which allows you to specify your own log output format " << "\n";
+            std::cout << "EXAMPLE:       git log --pretty=short" << "\n\n";
+
+            std::cout << "OPTION(S):     --no-merges" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Prevents the display of merge commits cluttering up your log history" << "\n";
+            std::cout << "EXAMPLE:       git log --no-merge" << "\n\n";
+
+            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        }
+
+        else if(cmd_options == "filters")
+        {
+            std::cout << "\n";
+            std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log <filters options> ~~~~~~~~~~~~~~~" << "\n\n";
+
+            std::cout << "OPTION(S):     --after" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Limits the commits to those made after the specified date" << "\n";
+            std::cout << "EXAMPLE:       git log --after=2.weeks" << "\n\n";
+
+            std::cout << "OPTION(S):     --before" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Limits the commits to those made before the specified date." << "\n";
+            std::cout << "EXAMPLE:       git log --before=2.weeks" << "\n\n";
+
+            std::cout << "OPTION(S):     --author:" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Only shows commits in which the author entry matches the specified string" << "\n";
+            std::cout << "EXAMPLE:       git log --author=florian" << "\n\n";
+
+            std::cout << "OPTION(S):     --grep" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Only shows commits with a commit message containing the string" << "\n";
+            std::cout << "EXAMPLE:       git log --grep=\"your string\"" << "\n\n";
+
+            std::cout << "OPTION(S):     -S" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Only shows commits adding or removing code matching the string" << "\n";
+            std::cout << "EXAMPLE:       git log -S=\"your string\"" << "\n\n";
+
+            std::cout << "OPTION(S):     --decorate" << "\n";
+            std::cout << "ARGUMENT(S):   none" << "\n";
+            std::cout << "USE:           Shows where the branch pointers are pointing" << "\n";
+            std::cout << "EXAMPLE:       git log --decorate" << "\n\n";
+
+            std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        }
+
+        else if(cmd_options == "back")
             break;
+
+        else if(cmd_options == "help" || cmd_options == "quit")
+            cmd_generic_selection(cmd_options);
+
         else
         {
             std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
@@ -235,21 +307,37 @@ void git_log_descriptions(string a)
 }
 
 
-/* -------------------------- GIT REMOTE BRANCHES COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT REMOTE BRANCHES COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_remote_branches_descriptions(string a)
 {
     std::cout << "\n";
 
     if (a == "git_commit_--amend")
     {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
     else if (a == "git_reset_HEAD_<file>")
     {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
@@ -276,21 +364,37 @@ void git_remote_branches_descriptions(string a)
 }
 
 
-/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_remote_repos_descriptions(string a)
 {
     std::cout << "\n";
 
     if (a == "git_commit_--amend")
     {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
     else if (a == "git_reset_HEAD_<file>")
     {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
@@ -317,21 +421,37 @@ void git_remote_repos_descriptions(string a)
 }
 
 
-/* -------------------------- GIT REMOTE TAGS COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT REMOTE TAGS COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_remote_tags_descriptions(string a)
 {
     std::cout << "\n";
 
     if (a == "git_commit_--amend")
     {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
     else if (a == "git_reset_HEAD_<file>")
     {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
@@ -357,21 +477,37 @@ void git_remote_tags_descriptions(string a)
     }
 }
 
-/* -------------------------- GIT TAGGING COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT TAGGING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_tagging_descriptions(string a)
 {
     std::cout << "\n";
 
     if (a == "git_commit_--amend")
     {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
     else if (a == "git_reset_HEAD_<file>")
     {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
@@ -397,7 +533,7 @@ void git_tagging_descriptions(string a)
     }
 }
 
-/* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_tracking_descriptions(string a)
 {
     std::cout << "\n";
@@ -453,21 +589,37 @@ void git_tracking_descriptions(string a)
 
 }
 
-/* -------------------------- GIT UNTRACKING COMMANDS DESCRIPTIONS  -------------------------- */
+/* -------------------------- GIT UNTRACKING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
 void git_untracking_descriptions(string a)
 {
     std::cout << "\n";
 
     if (a == "git_commit_--amend")
     {
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
     else if (a == "git_reset_HEAD_<file>")
     {
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     " << "\n";
+        std::cout << "ARGUMENT(S):   " << "\n";
+        std::cout << "USE 1:         " << "\n";
+        std::cout << "USE 2:         " << "\n";
+        std::cout << "WARNING:       " << "\n";
+        std::cout << "EXAMPLE:       " << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 

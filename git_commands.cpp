@@ -121,8 +121,8 @@ void git_cmd_configuring()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ CONFIGURATION COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "git config" << "\n";
-        std::cout << "USE: Reads and writes contributor's git settings";
+        std::cout << "COMMAND: git config" << "\n";
+        std::cout << "USE:     Reads and writes contributor's git settings";
         std::cout << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
@@ -152,7 +152,7 @@ void git_cmd_configuring()
 }
 
 
-/* -------------------------- GIT LOG COMMANDS -------------------------- NOT DONE*/
+/* -------------------------- GIT LOG COMMANDS -------------------------- */
 void git_cmd_log()
 {
     while(true)
@@ -160,8 +160,8 @@ void git_cmd_log()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ LOG COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "COMMAND: git log" << "\n";
+        std::cout << "USE: Prints the commit history" << "\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -169,14 +169,10 @@ void git_cmd_log()
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_log")
+            git_log_descriptions();
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
-
-        if(cmd_options == "back")
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")

@@ -8,7 +8,7 @@
 void git_amending_descriptions();
 void git_branching_descriptions();
 void git_config_descriptions();
-void git_log_descriptions(string a);
+void git_log_descriptions();
 void git_remote_branches_descriptions(string a);
 void git_remote_repos_descriptions(string a);
 void git_remote_tags_descriptions(string a);
