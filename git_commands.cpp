@@ -158,7 +158,7 @@ void git_cmd_log()
     while(true)
     {
         std::cout << "\n";
-        std::cout << "~~~~~~~~~~~~~~~ LOG COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ LOG COMMANDS ~~~~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: git log" << "\n";
         std::cout << "USE: Prints the commit history" << "\n";
@@ -199,15 +199,15 @@ void git_cmd_manual()
         std::cout << "~~~~~~~~~~~~~~~ MANUAL COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: git help <command>" << "\n";
-        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n";
         std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: man git-<command>" << "\n";
-        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n\n";
+        std::cout << "USE:     Summon exhaustive help on how to use <command>" << "\n";
         std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: git <command> -h" << "\n";
-        std::cout << "USE:     gives more concise help. Example: git add -h" << "\n\n";
+        std::cout << "USE:     gives more concise help. Example: git add -h" << "\n";
         std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
@@ -385,7 +385,6 @@ void git_cmd_tagging()
         std::cout << "~~~~~~~~~~~~~~~ TAGGING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: " << "\n";
-
         std::cout << "USE:     " << "\n";
         std::cout << "WARNING: " << "\n";
         std::cout << "NOTE:    " << "\n\n";

@@ -15,7 +15,7 @@ int main()
         std::cout << "Enter a valid command ('help' for available commands): ";
         std::cin >> choice;
 
-        std::cout << "\n\n" << "==========================================================================================" << "\n\n";
+        std::cout << "\n" << "==========================================================================================" << "\n\n";
 
         if (choice == "amending")
             git_cmd_amending();
