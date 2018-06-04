@@ -240,23 +240,35 @@ void git_cmd_remote_branches()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ MANAGING REMOTE BRANCHES COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "COMMAND: git fetch <remote> <branch>" << "\n";
+        std::cout << "USE:     Fetches <branch> in <remote> but doesn’t merge it yet" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "COMMAND: git pull <remote> <branch>" << "\n";
+        std::cout << "USE:     Automatically fetches and merges <branch> in <remote> into current branch" << "\n\n";
+
+        std::cout << "COMMAND: git push <remote> <branch>" << "\n";
+        std::cout << "USE:     Pushes local <branch> to <branch> in <remote>" << "\n";
+        std::cout << "WARNING: When the command line does not specify where to push with the " << "\n";
+        std::cout << "         <remote> argument, configuration for the current branch is consulted to " << "\n";
+        std::cout << "         determine where to push. If the configuration is missing, it defaults to " << "\n";
+        std::cout << "         origin." << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_fetch_<remote>_<branch>" || cmd_options == "git_fetch")
+            git_remote_branches_descriptions("git_fetch");
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
+        else if(cmd_options == "git_pull_<remote>_<branch>" || cmd_options == "git_pull")
+            git_remote_branches_descriptions("git_pull");
 
-        if(cmd_options == "back")
+        else if(cmd_options == "git_push_<remote>_<branch>" || cmd_options == "git_push")
+            git_remote_branches_descriptions("git_push");
+
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")
@@ -274,7 +286,7 @@ void git_cmd_remote_branches()
 }
 
 
-/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS  -------------------------- NOT DONE*/
+/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS  -------------------------- */
 void git_cmd_remote_repos()
 {
     while(true)
@@ -282,8 +294,24 @@ void git_cmd_remote_repos()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ MANAGING REMOTE REPOSITORIES COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "COMMAND: git clone <url> <name_you_want_to_give_to_the_repo>" << "\n";
+        std::cout << "USE:     Gets a copy of an existing Git repository" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git remote add <shortname> <url>" << "\n";
+        std::cout << "USE:     Adds a new remote Git repository with a <shortname> you can reference easily" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git remote rename <name_before> <name_after>" << "\n";
+        std::cout << "USE:     Changes a remote’s shortname" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git remote" << "\n";
+        std::cout << "USE:     Shows a list of project's existing remotes" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git remote show <remote>" << "\n";
+        std::cout << "USE:     Gives some information about the remote <name>" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -291,14 +319,10 @@ void git_cmd_remote_repos()
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_remote_show_<remote>" || cmd_options == "git_remote_show")
+            git_remote_repos_descriptions();
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
-
-        if(cmd_options == "back")
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")
@@ -316,7 +340,7 @@ void git_cmd_remote_repos()
 }
 
 
-/* -------------------------- GIT REMOTE TAGS COMMANDS -------------------------- NOT DONE*/
+/* -------------------------- GIT REMOTE TAGS COMMANDS -------------------------- */
 void git_cmd_remote_tags()
 {
     while(true)
@@ -324,21 +348,15 @@ void git_cmd_remote_tags()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ MANAGING REMOTE TAGS COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "COMMAND: git push <remote> <tagname> OR --tags" << "\n";
+        std::cout << "USE:     Pushes <tagname> to <remote>" << "\n";
+        std::cout << "         --tags option pushes all tags from current branch to <remote>" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
-
-        std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
+        std::cout << "Type 'back' to go back to main menu ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
-
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
-
-        else if(cmd_options == "git_")
-            //EMPTY*/
 
         if(cmd_options == "back")
             break;
@@ -367,7 +385,10 @@ void git_cmd_tagging()
         std::cout << "~~~~~~~~~~~~~~~ TAGGING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+
+        std::cout << "USE:     " << "\n";
+        std::cout << "WARNING: " << "\n";
+        std::cout << "NOTE:    " << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -466,7 +487,9 @@ void git_cmd_untracking()
         std::cout << "~~~~~~~~~~~~~~~ UNTRACKING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: " << "\n";
-        std::cout << "USE: " << "\n";
+        std::cout << "USE:     " << "\n";
+        std::cout << "WARNING: " << "\n";
+        std::cout << "NOTE:    " << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 

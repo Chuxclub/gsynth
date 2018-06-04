@@ -307,42 +307,49 @@ void git_log_descriptions()
 }
 
 
-/* -------------------------- GIT REMOTE BRANCHES COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
+/* -------------------------- GIT REMOTE BRANCHES COMMANDS DESCRIPTIONS  -------------------------- */
 void git_remote_branches_descriptions(string a)
 {
     std::cout << "\n";
 
-    if (a == "git_commit_--amend")
+    if (a == "git_fetch")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git fetch ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   <remote> + <branch>" << "\n";
+        std::cout << "USE:           Gives you the possibility to merge later" << "\n";
+        std::cout << "               Especially useful when you're not ready to commit and push yet (as in a WIP)..." << "\n";
+        std::cout << "EXAMPLE:       git fetch origin master" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    else if (a == "git_reset_HEAD_<file>")
+    else if (a == "git_pull")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git pull ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   <remote> + <branch>" << "\n";
+        std::cout << "USE:           Shortcut when you are ready to commit and push" << "\n";
+        std::cout << "EXAMPLE:       git pull origin master" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
-    else if (a == "git_checkout_--<file>")
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
+    else if (a == "git_push")
+    {
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git push ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   <remote> + <branch>" << "\n";
+        std::cout << "USE:           Pushes local <branch> to remote <branch>" << "\n";
+        std::cout << "               Hence <branch> has a double meaning here..." << "\n";
+        std::cout << "EXAMPLE:       git push origin master" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+    }
 
     string proceed;
     while(true)
@@ -364,99 +371,23 @@ void git_remote_branches_descriptions(string a)
 }
 
 
-/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
-void git_remote_repos_descriptions(string a)
+/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS DESCRIPTIONS  -------------------------- */
+void git_remote_repos_descriptions()
 {
     std::cout << "\n";
 
-    if (a == "git_commit_--amend")
-    {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+    std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git remote show ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+    std::cout << "OPTION:        none" << "\n";
+    std::cout << "ARGUMENT(S):   <remote>" << "\n";
+    std::cout << "USE:           Shows which branch is automatically pushed to when you run git push while on certain branches." << "\n";
+    std::cout << "               Shows you which remote branches on the server you don’t yet have," << "\n";
+    std::cout << "               which remote branches you have that have been removed from the server," << "\n";
+    std::cout << "               and multiple local branches that are able to merge automatically" << "\n";
+    std::cout << "               with their remote-tracking branch when you run git pull)" << "\n";
+    std::cout << "EXAMPLE:       git remote show origin" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
-    }
-
-    else if (a == "git_reset_HEAD_<file>")
-    {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
-
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
-
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
-    }
-
-
-    else if (a == "git_checkout_--<file>")
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
-
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
-}
-
-
-/* -------------------------- GIT REMOTE TAGS COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
-void git_remote_tags_descriptions(string a)
-{
-    std::cout << "\n";
-
-    if (a == "git_commit_--amend")
-    {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
-
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
-
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
-    }
-
-    else if (a == "git_reset_HEAD_<file>")
-    {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
-
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
-
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
-    }
-
-
-    else if (a == "git_checkout_--<file>")
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
+    std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
 
     string proceed;
     while(true)
