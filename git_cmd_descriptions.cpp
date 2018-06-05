@@ -476,39 +476,88 @@ void git_tagging_descriptions(string a)
     }
 }
 
-/* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
+/* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- */
 void git_tracking_descriptions(string a)
 {
-    std::cout << "\n";
-
-    if (a == "git_commit_--amend")
+    if (a == "git_status")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git commit --amend ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git status ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-        std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Outputs a detailed status" << "\n";
+        std::cout << "EXAMPLE:       git status" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "OPTION(S):     -s" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Outputs a simplified status" << "\n";
+        std::cout << "FYI:           ?? = new files that aren’t tracked" << "\n";
+        std::cout << "               A = new files that have been added to the staging area" << "\n";
+        std::cout << "               M = modified files" << "\n";
+        std::cout << "               left-hand column = status of the staging area" << "\n";
+        std::cout << "               right-hand column = status of the working tree" << "\n";
+        std::cout << "EXAMPLE:       git status -s" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    else if (a == "git_reset_HEAD_<file>")
+    else if (a == "git_add")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git reset HEAD <file> ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git add <file_name> ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "Git reset might have other uses as it might have other arguments" << "\n";
-        std::cout << "Unfortunately, I cannot provide more information than what've been said in the amending commands menu..." << "\n\n";
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   <file_name>" << "\n";
+        std::cout << "NOTE:          No more information on this command can be provided..." << "\n\n";
+        std::cout << "EXAMPLE:       git add main.cpp" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "OPTION(S):     -a" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Starts tracking all project's files OR stages all project's files" << "\n";
+        std::cout << "EXAMPLE:       git add -a" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-
-    else if (a == "git_checkout_--<file>")
+    else if (a == "git_commit")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git checkout --<file> ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git commit ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
+        std::cout << "COMMAND SYNTAX: git commit -<option 1><option 2><option...>" << "\n";
+        std::cout << "EXAMPLE:        git commit -amv \"My commit message\"" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "OPTION(S):     -m" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Type your commit message inline" << "\n";
+        std::cout << "EXAMPLE:       git commit -m \"My commit message\"" << "\n\n";
+
+        std::cout << "OPTION(S):     -v" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Outputs an explicit reminder of what you’ve modified after commit" << "\n";
+        std::cout << "EXAMPLE:       git commit -v" << "\n\n";
+
+        std::cout << "OPTION(S):     -a" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Automatically stage every file that is already tracked before doing the commit" << "\n";
+        std::cout << "EXAMPLE:       git commit -a" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+    }
+
+    else if (a == "git_diff")
+    {
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git diff ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "OPTION(S):     none" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Prints what you’ve changed but not yet staged" << "\n";
+        std::cout << "EXAMPLE:       git diff" << "\n\n";
+
+        std::cout << "OPTION(S):     --staged" << "\n";
+        std::cout << "ARGUMENT(S):   none" << "\n";
+        std::cout << "USE:           Prints what you’ve staged that will go into your next commit" << "\n";
+        std::cout << "EXAMPLE:       git diff --staged" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 

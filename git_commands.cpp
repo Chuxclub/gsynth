@@ -435,7 +435,7 @@ void git_cmd_tagging()
 }
 
 
-/* -------------------------- GIT TRACKING COMMANDS  -------------------------- NOT DONE*/
+/* -------------------------- GIT TRACKING COMMANDS  -------------------------- */
 void git_cmd_tracking()
 {
     while(true)
@@ -444,37 +444,46 @@ void git_cmd_tracking()
         std::cout << "~~~~~~~~~~~~~~~ TRACKING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "COMMAND: git init" << "\n";
-        std::cout << "USE: Start controlling a project directory with Git, you first need to go to that project’s directory" << "\n";
+        std::cout << "USE:     Start controlling a project directory with Git, you first need to go to" << "\n";
+        std::cout << "         that project’s directory" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: git status" << "\n";
-        std::cout << "USE: Shows which files are in which state" << "\n";
+        std::cout << "USE:     Shows which files are in which state" << "\n";
 
-        std::cout << "COMMAND: git add" << "\n";
-        std::cout << "USE: Starts tracking new files or stage files" << "\n";
+        std::cout << "COMMAND: git add <file_name>" << "\n";
+        std::cout << "USE:     Starts tracking new <file_name> OR stages <file_name>" << "\n";
 
         std::cout << "COMMAND: git commit" << "\n";
-        std::cout << "USE: Creates commit. Launches your editor of choice." << "\n";
+        std::cout << "USE:     Creates commit. Launches your editor of choice." << "\n";
 
         std::cout << "COMMAND: git diff" << "\n";
-        std::cout << "USE: Print what you’ve changed but not yet staged (except with --staged option)" << "\n";
+        std::cout << "USE:     Print what you’ve changed but not yet staged (except with --staged option)" << "\n";
 
         std::cout << "COMMAND: git difftool" << "\n";
-        std::cout << "USE: Print diffs in another graphical or external diff viewing program instead." << "\n";
-        std::cout << "    (Run git difftool --tool-help to see what is available on your system)" << "\n";
+        std::cout << "USE:     Print diffs in another graphical or external diff viewing program instead." << "\n";
+        std::cout << "         (Run git difftool --tool-help to see what is available on your system)" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_status")
+            git_tracking_descriptions("git_status");
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
+        else if(cmd_options == "git_add" || cmd_options == "git_add_<file_name>")
+            git_tracking_descriptions("git_add");
 
-        if(cmd_options == "back")
+        else if(cmd_options == "git_commit")
+            git_tracking_descriptions("git_commit");
+
+        else if(cmd_options == "git_diff")
+            git_tracking_descriptions("git_diff");
+
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")
