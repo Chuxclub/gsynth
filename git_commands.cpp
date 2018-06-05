@@ -449,16 +449,16 @@ void git_cmd_tracking()
         std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
 
         std::cout << "COMMAND: git status" << "\n";
-        std::cout << "USE:     Shows which files are in which state" << "\n";
+        std::cout << "USE:     Shows which files are in which state" << "\n\n";
 
         std::cout << "COMMAND: git add <file_name>" << "\n";
-        std::cout << "USE:     Starts tracking new <file_name> OR stages <file_name>" << "\n";
+        std::cout << "USE:     Starts tracking new <file_name> OR stages <file_name>" << "\n\n";
 
         std::cout << "COMMAND: git commit" << "\n";
-        std::cout << "USE:     Creates commit. Launches your editor of choice." << "\n";
+        std::cout << "USE:     Creates commit. Launches your editor of choice." << "\n\n";
 
         std::cout << "COMMAND: git diff" << "\n";
-        std::cout << "USE:     Print what you’ve changed but not yet staged (except with --staged option)" << "\n";
+        std::cout << "USE:     Print what you’ve changed but not yet staged (except with --staged option)" << "\n\n";
 
         std::cout << "COMMAND: git difftool" << "\n";
         std::cout << "USE:     Print diffs in another graphical or external diff viewing program instead." << "\n";

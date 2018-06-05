@@ -479,6 +479,8 @@ void git_tagging_descriptions(string a)
 /* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- */
 void git_tracking_descriptions(string a)
 {
+    std::cout << "\n";
+
     if (a == "git_status")
     {
         std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git status ~~~~~~~~~~~~~~~" << "\n\n";
