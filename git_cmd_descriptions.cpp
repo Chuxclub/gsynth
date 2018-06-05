@@ -512,7 +512,7 @@ void git_tracking_descriptions(string a)
         std::cout << "NOTE:          No more information on this command can be provided..." << "\n\n";
         std::cout << "EXAMPLE:       git add main.cpp" << "\n\n";
 
-        std::cout << "OPTION(S):     -a" << "\n";
+        std::cout << "OPTION(S):     -A OR --all" << "\n";
         std::cout << "ARGUMENT(S):   none" << "\n";
         std::cout << "USE:           Starts tracking all project's files OR stages all project's files" << "\n";
         std::cout << "EXAMPLE:       git add -a" << "\n\n";
@@ -583,7 +583,7 @@ void git_tracking_descriptions(string a)
 
 }
 
-/* -------------------------- GIT UNTRACKING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
+/* -------------------------- GIT UNTRACKING COMMANDS DESCRIPTIONS  -------------------------- */
 void git_untracking_descriptions(string a)
 {
     std::cout << "\n";

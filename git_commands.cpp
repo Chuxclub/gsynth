@@ -501,7 +501,7 @@ void git_cmd_tracking()
 }
 
 
-/* -------------------------- GIT UNTRACKING COMMANDS  -------------------------- NOT DONE*/
+/* -------------------------- GIT UNTRACKING COMMANDS  -------------------------- */
 void git_cmd_untracking()
 {
     while(true)
