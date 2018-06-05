@@ -376,7 +376,7 @@ void git_cmd_remote_tags()
 }
 
 
-/* -------------------------- GIT TAGGING COMMANDS -------------------------- NOT DONE*/
+/* -------------------------- GIT TAGGING COMMANDS -------------------------- */
 void git_cmd_tagging()
 {
     while(true)
@@ -384,10 +384,20 @@ void git_cmd_tagging()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ TAGGING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE:     " << "\n";
-        std::cout << "WARNING: " << "\n";
-        std::cout << "NOTE:    " << "\n\n";
+        std::cout << "COMMAND: git tag <tag_name>" << "\n";
+        std::cout << "USE:     Creates a lightweight tag: only the commit checksum is stored in a file" << "\n\n";
+
+        std::cout << "COMMAND: git tag -a <tag_name> (<commit_checksum>) -m <description>" << "\n";
+        std::cout << "USE:     Creates an annotated tag: they are stored as full objects in the Git database." << "\n";
+        std::cout << "         They contain the tagger name, email, and date; have a tagging message; and can be" << "\n";
+        std::cout << "         signed and verified. Add commit checksum first 6 characters to tag a former commit as important" << "\n";
+        std::cout << "         (Commit checksum can be found by git log command, it looks like this: '29ec21c'...)" << "\n\n";
+
+        std::cout << "COMMAND: git tag" << "\n";
+        std::cout << "USE:     Lists all tags." << "\n\n";
+
+        std::cout << "COMMAND: git show <tag_name>" << "\n";
+        std::cout << "USE:     Displays the tag data along with the commit tagged" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -395,14 +405,19 @@ void git_cmd_tagging()
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == "git_tag_<tag_name>")
+            git_tagging_descriptions("git_tag_<tag_name>");
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
+        else if(cmd_options == "git_tag_-a" || cmd_options == "git_tag_-a_<tag_name>_(<commit_checksum>)_-m_<description>")
+            git_tagging_descriptions("git_tag_-a");
 
-        if(cmd_options == "back")
+        else if(cmd_options == "git_tag")
+            git_tagging_descriptions("git_tag");
+
+        else if(cmd_options == "git_show" || cmd_options == "git_show_<tag_name>")
+            git_tagging_descriptions("git_show");
+
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")

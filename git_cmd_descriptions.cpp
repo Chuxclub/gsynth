@@ -408,42 +408,54 @@ void git_remote_repos_descriptions()
     }
 }
 
-/* -------------------------- GIT TAGGING COMMANDS DESCRIPTIONS  -------------------------- NOT DONE*/
+/* -------------------------- GIT TAGGING COMMANDS DESCRIPTIONS  -------------------------- */
 void git_tagging_descriptions(string a)
 {
     std::cout << "\n";
 
-    if (a == "git_commit_--amend")
+    if (a == "git_tag_<tag_name>")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git tag <tag_name> ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "FYI: Mere pointer to a text file where <tag_name> is stored" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    else if (a == "git_reset_HEAD_<file>")
+    else if (a == "git_tag_-a")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git tag -a <tag_name> (<commit_checksum>) -m <description> ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "FYI: A checksum is a string of letters and numbers associated to a file after having been" << "\n\n";
+        std::cout << "     processed (we say 'hashed' by analogy to cooking) by a function as a way to check its integrity" << "\n\n";
+        std::cout << "     as well as to store it more easily and efficiently. Checksums have many other applications" << "\n\n";
+        std::cout << "     as in security where they are used to protect passwords but also in data transmissions (cf. integrity)..." << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
+    else if (a == "git_tag")
+    {
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git tag ~~~~~~~~~~~~~~~" << "\n\n";
 
-    else if (a == "git_checkout_--<file>")
-        std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
+        std::cout << "OPTION(S):     -l" << "\n";
+        std::cout << "ARGUMENT(S):   <tag_name + wildcard> OR <wildcard + tag_name> OR <wildcards>..." << "\n";
+        std::cout << "USE:           Adds wildcards support" << "\n";
+        std::cout << "EXAMPLE:       git tag -l \"v1.8.5*\"" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+    }
+
+    else if (a == "git_show")
+    {
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git show <tag_name> ~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "FYI: If tag is lightweight it will display <tag_name> and the commit it refers to" << "\n";
+        std::cout << "FYI: If tag is annotated it will display everything an annotated tag supports" << "\n";
+        std::cout << "FYI: (description, author...) + the commit it refers to" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+    }
 
     string proceed;
     while(true)
