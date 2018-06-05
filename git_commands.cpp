@@ -509,10 +509,23 @@ void git_cmd_untracking()
         std::cout << "\n";
         std::cout << "~~~~~~~~~~~~~~~ UNTRACKING COMMANDS ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "COMMAND: " << "\n";
-        std::cout << "USE:     " << "\n";
-        std::cout << "WARNING: " << "\n";
-        std::cout << "NOTE:    " << "\n\n";
+        std::cout << "FILE:    .gitignore" << "\n";
+        std::cout << "USE:     User-created file listing files and/or wildcard patterns to match class of files" << "\n";
+        std::cout << "         that you don’t want Git to automatically add or even show you as being untracked." << "\n";
+        std::cout << "WARNING: This is not a command but a file that you have to create in your project's directory!" << "\n\n";
+
+        std::cout << "COMMAND: git rm <file>" << "\n";
+        std::cout << "USE:     Remove file from the work directory and from tracked files, but not from the history. " << "\n";
+        std::cout << "WARNING: Be sure of what you're doing, you might lose important data you didn't want to lose!" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git rm --cached <file>" << "\n";
+        std::cout << "USE:     Remove from tracked files but don't remove from the work directory nor the history. " << "\n";
+        std::cout << "WARNING: File will be untrack, meaning that further modifications won't be saved in Git history!" << "\n";
+        std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
+
+        std::cout << "COMMAND: git mv <file_to_rm> <file_to_track>" << "\n";
+        std::cout << "USE:     Mainly used to change a tracked file's name" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -520,14 +533,13 @@ void git_cmd_untracking()
         string cmd_options;
         std::cin >> cmd_options;
 
-        /*
-        if(cmd_options == "git_")
-            //EMPTY
+        if(cmd_options == ".gitignore")
+            git_untracking_descriptions(".gitignore");
 
-        else if(cmd_options == "git_")
-            //EMPTY*/
+        else if(cmd_options == "git_mv" || cmd_options == "git_mv_<file_to_rm>_<file_to_track>")
+            git_untracking_descriptions("git_mv");
 
-        if(cmd_options == "back")
+        else if(cmd_options == "back")
             break;
 
         else if(cmd_options == "help" || cmd_options == "quit")

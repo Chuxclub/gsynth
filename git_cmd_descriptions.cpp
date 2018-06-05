@@ -14,8 +14,8 @@ void git_amending_descriptions()
 
     std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git commit --amend ~~~~~~~~~~~~~~~" << "\n\n";
 
-    std::cout << "This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
-    std::cout << "No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
+    std::cout << "FYI: This is not a command as it is an option to the git commit command, still it belongs to the amending theme" << "\n";
+    std::cout << "     No more information than what've been said in the amending commands menu can be provided..." << "\n\n";
 
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
@@ -451,8 +451,8 @@ void git_tagging_descriptions(string a)
         std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git show <tag_name> ~~~~~~~~~~~~~~~" << "\n\n";
 
         std::cout << "FYI: If tag is lightweight it will display <tag_name> and the commit it refers to" << "\n";
-        std::cout << "FYI: If tag is annotated it will display everything an annotated tag supports" << "\n";
-        std::cout << "FYI: (description, author...) + the commit it refers to" << "\n\n";
+        std::cout << "     If tag is annotated it will display everything an annotated tag supports" << "\n";
+        std::cout << "     (description, author...) + the commit it refers to" << "\n\n";
 
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
@@ -559,7 +559,7 @@ void git_tracking_descriptions(string a)
         std::cout << "USE:           Prints what you’ve staged that will go into your next commit" << "\n";
         std::cout << "EXAMPLE:       git diff --staged" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 
@@ -588,32 +588,29 @@ void git_untracking_descriptions(string a)
 {
     std::cout << "\n";
 
-    if (a == "git_commit_--amend")
+    if (a == ".gitignore")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: .gitignore ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "FYI 1: → /<file> = only ignore the <file> in the current directory" << "\n";
+        std::cout << "       → <dir>/ = ignore all files in the <dir>/ directory" << "\n";
+        std::cout << "       → <dir>/*.<ext> = ignore <dir>/notes.<ext>, but not <dir>/<subdir>/arch.<ext>" << "\n";
+        std::cout << "       → <dir>/**/*.<ext> = ignore all .<ext> files in the <dir>/ directory and any of its subdirectories" << "\n";
+        std::cout << "       → <dir>/*.<ext> = ignore <dir>/notes.<ext>, but not <dir>/<subdir>/arch.<ext>" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        std::cout << "FYI 2: <dir> = <directory> and <ext> = <file extension> (as .pdf, .txt, .jpg, ...)" << "\n\n";
+
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    else if (a == "git_reset_HEAD_<file>")
+    else if (a == "git_mv")
     {
-        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git log ~~~~~~~~~~~~~~~" << "\n\n";
+        std::cout << "~~~~~~~~~~~~~~~ DESCRIPTION: git mv ~~~~~~~~~~~~~~~" << "\n\n";
 
-        std::cout << "OPTION(S):     " << "\n";
-        std::cout << "ARGUMENT(S):   " << "\n";
-        std::cout << "USE 1:         " << "\n";
-        std::cout << "USE 2:         " << "\n";
-        std::cout << "WARNING:       " << "\n";
-        std::cout << "EXAMPLE:       " << "\n\n";
+        std::cout << "FYI: Equivalent to: mv <file_to_rm> <file_to_track> → git rm <file_to_rm>" << "\n";
+        std::cout << "     → finally git add <file>" << "\n\n";
 
-        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
+        std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
 

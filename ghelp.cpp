@@ -13,10 +13,6 @@ void ghelp()
     std::cout << "'back' => Go to previous selection" << "\n";
     std::cout << "'quit' => Exit program (has to be used in main menu)" << "\n\n";
 
-    std::cout << "IMPORTANT: Replace all spaces by underscores (this character: _ ) when typing in your selected commands" << "\n";
-    std::cout << "           Example: git push <origin> <branch> => Type in: git_push_<origin>_<branch>" << "\n";
-    std::cout << "           Tip: Some commands have shortcuts like git push <origin> <branch> => Type in: git_push" << "\n\n";
-
     std::cout << "~~~~~~~~~~~~~~~~~~~ MAIN MENU COMMANDS ~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
     std::cout << "'amending' => Learn how to make small corrections to commits, staged files, etc." << "\n";
@@ -32,6 +28,12 @@ void ghelp()
     std::cout << "'untracking' => Learn how to untrack projects' files" << "\n\n";
 
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
+
+    std::cout << "IMPORTANT 1: Replace all spaces by underscores (this character: _ ) when typing in your selected commands" << "\n";
+    std::cout << "             Example: git push <origin> <branch> => Type in: git_push_<origin>_<branch>" << "\n";
+    std::cout << "             Tip: Some commands have shortcuts like git push <origin> <branch> => Type in: git_push" << "\n\n";
+
+    std::cout << "IMPORTANT 2: Commands with \"NOTE: No more information can be provided...\" can't be selected" << "\n\n";
 
     std::cout << "=========================================================" << "\n\n";
 
