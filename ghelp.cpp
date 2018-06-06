@@ -5,6 +5,7 @@
 #include <iostream>
 #include "std_lib_facilities.h"
 #include "ghelp.h"
+#include "gsynth_generic_selections.h"
 
 void ghelp()
 {
@@ -37,21 +38,5 @@ void ghelp()
 
     std::cout << "=========================================================" << "\n\n";
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }

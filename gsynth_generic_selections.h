@@ -7,5 +7,6 @@
 
 void main_generic_selection(string choice);
 void cmd_generic_selection(string cmd_options);
+void generic_proceed();
 
 #endif //GSYNTH_GSYNTH_GENERIC_SELECTIONS_H

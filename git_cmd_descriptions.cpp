@@ -19,23 +19,7 @@ void git_amending_descriptions()
 
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 
@@ -74,23 +58,7 @@ void git_branching_descriptions()
 
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 
@@ -174,23 +142,7 @@ void git_config_descriptions()
         }
     }
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 
@@ -303,6 +255,8 @@ void git_log_descriptions()
 
             std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
         }
+
+        generic_proceed();
     }
 }
 
@@ -351,23 +305,7 @@ void git_remote_branches_descriptions(string a)
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 
@@ -389,23 +327,7 @@ void git_remote_repos_descriptions()
 
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 /* -------------------------- GIT TAGGING COMMANDS DESCRIPTIONS  -------------------------- */
@@ -457,23 +379,7 @@ void git_tagging_descriptions(string a)
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }
 
 /* -------------------------- GIT TRACKING COMMANDS DESCRIPTIONS  -------------------------- */
@@ -562,25 +468,7 @@ void git_tracking_descriptions(string a)
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
-
+    generic_proceed();
 }
 
 /* -------------------------- GIT UNTRACKING COMMANDS DESCRIPTIONS  -------------------------- */
@@ -613,25 +501,8 @@ void git_untracking_descriptions(string a)
         std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n\n";
     }
 
-
     else if (a == "git_checkout_--<file>")
         std::cout << "git checkout has other uses depending on its options and arguments (see 'branching')" << "\n\n";
 
-    string proceed;
-    while(true)
-    {
-        std::cout << "Enter 'p' when you are ready to proceed: ";
-        cin >> proceed;
-
-        if(proceed == "p")
-            break;
-        else
-        {
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-
-            std::cout << "Please check spelling";
-
-            std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
-        }
-    }
+    generic_proceed();
 }

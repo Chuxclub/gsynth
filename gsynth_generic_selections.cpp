@@ -14,6 +14,15 @@ void main_generic_selection(string choice)
 
     else if (choice == "back")
         std::cout << "You are already on main menu ('quit' to exit program)" << "\n\n";
+
+    else
+    {
+        std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "Please check spelling";
+
+        std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+    }
 }
 
 void cmd_generic_selection(string cmd_options)
@@ -29,4 +38,20 @@ void cmd_generic_selection(string cmd_options)
 
         std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
     }
+
+    else
+    {
+        std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+
+        std::cout << "Please check spelling";
+
+        std::cout << "\n\n" << "~~~~~~~~~~~~~~~ /!\\ WRONG INPUT /!\\ ~~~~~~~~~~~~~~~~" << "\n\n";
+    }
+}
+
+void generic_proceed()
+{
+    string proceed;
+    std::cout << "Press any key when you are ready to proceed: ";
+    cin >> proceed;
 }
