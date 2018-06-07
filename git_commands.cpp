@@ -196,8 +196,6 @@ void git_cmd_remote_tags()
     std::cout << "         --tags option pushes all tags from current branch to <remote>" << "\n";
     std::cout << "NOTE:    No more information on this command can be provided..." << "\n\n";
     std::cout << "~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~" << "\n\n";
-
-    generic_proceed();
 }
 
 

@@ -3,7 +3,6 @@
 //
 #include <iostream>
 #include "std_lib_facilities.h"
-#include "ghelp.h"
 #include "git_cmd_descriptions.h"
 #include "gsynth_generic_selections.h"
 

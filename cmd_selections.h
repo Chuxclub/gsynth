@@ -11,6 +11,7 @@ void configuring_selection();
 void log_selection();
 void remote_branches_selection();
 void remote_repos_selection();
+void remote_tags_selection();
 void tagging_selection();
 void tracking_selection();
 void untracking_selection();

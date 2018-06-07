@@ -3,7 +3,6 @@
 //
 #include <iostream>
 #include "std_lib_facilities.h"
-#include "ghelp.h"
 #include "git_commands.h"
 #include "git_cmd_descriptions.h"
 #include "gsynth_generic_selections.h"
@@ -13,6 +12,8 @@ void amending_selection()
 {
     while(true)
     {
+        git_cmd_amending();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -23,13 +24,8 @@ void amending_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_amending();
     }
 }
 
@@ -39,6 +35,8 @@ void branching_selection()
 {
     while(true)
     {
+        git_cmd_branching();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -49,13 +47,8 @@ void branching_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_branching();
     }
 }
 
@@ -64,6 +57,8 @@ void configuring_selection()
 {
     while(true)
     {
+        git_cmd_configuring();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -74,13 +69,8 @@ void configuring_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_configuring();
     }
 }
 
@@ -89,6 +79,8 @@ void log_selection()
 {
     while(true)
     {
+        git_cmd_log();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -99,21 +91,18 @@ void log_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_log();
     }
 }
 
-/* -------------------------- GIT REMOTE BRANCHES COMMANDS -------------------------- */
+/* -------------------------- GIT REMOTE BRANCHES COMMANDS SELECTION -------------------------- */
 void remote_branches_selection()
 {
     while(true)
     {
+        git_cmd_remote_branches();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -130,21 +119,18 @@ void remote_branches_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_remote_branches();
     }
 }
 
-/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS  -------------------------- */
+/* -------------------------- GIT REMOTE REPOSITORIES COMMANDS SELECTION -------------------------- */
 void remote_repos_selection()
 {
     while(true)
     {
+        git_cmd_remote_repos();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -155,21 +141,25 @@ void remote_repos_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_remote_repos();
     }
 }
 
-/* -------------------------- GIT TAGGING COMMANDS -------------------------- */
+/* -------------------------- GIT REMOTE TAGS COMMANDS SELECTION -------------------------- */
+void remote_tags_selection()
+{
+    git_cmd_remote_tags();
+    generic_proceed();
+}
+
+/* -------------------------- GIT TAGGING COMMANDS SELECTION -------------------------- */
 void tagging_selection()
 {
     while(true)
     {
+        git_cmd_tagging();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -189,21 +179,18 @@ void tagging_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_tagging();
     }
 }
 
-/* -------------------------- GIT TRACKING COMMANDS  -------------------------- */
+/* -------------------------- GIT TRACKING COMMANDS SELECTION -------------------------- */
 void tracking_selection()
 {
     while(true)
     {
+        git_cmd_tracking();
+
         std::cout << "Type a command you want to have complementary information about ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -223,21 +210,18 @@ void tracking_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_tracking();
     }
 }
 
-/* -------------------------- GIT UNTRACKING COMMANDS  -------------------------- */
+/* -------------------------- GIT UNTRACKING COMMANDS SELECTION -------------------------- */
 void untracking_selection()
 {
     while(true)
     {
+        git_cmd_untracking();
+
         std::cout << "Select a command you want to learn how to use ('help' for available commands): ";
         string cmd_options;
         std::cin >> cmd_options;
@@ -251,12 +235,7 @@ void untracking_selection()
         else if(cmd_options == "back")
             break;
 
-        else if(cmd_options == "help" || cmd_options == "quit")
-            cmd_generic_selection(cmd_options);
-
         else
             cmd_generic_selection(cmd_options);
-
-        git_cmd_untracking();
     }
 }
